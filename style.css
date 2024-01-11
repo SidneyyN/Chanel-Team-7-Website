@@ -3,3 +3,8 @@ body::before {
     content: '';
     height: 60px;
 }
+
+.secondary-page-title-custom-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
