@@ -11,6 +11,12 @@ body::before {
 
 .custom-img-size {
     width: 700px; /* Set your desired width */
-    height: 800px; /* Set your desired height */
+    height: 750px; /* Set your desired height */
     object-fit: cover; /* This will cover the area, cropping the image if necessary */
+}
+
+.custom-img-app-size {
+    width: 700px;
+    height: 1000px;
+    object-fit: cover;
 }
