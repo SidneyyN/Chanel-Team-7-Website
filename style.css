@@ -20,3 +20,33 @@ body::before {
     height: 1000px;
     object-fit: cover;
 }
+
+.team-img {
+    width: 700px; /* Adjust as needed */
+    height: 750px; /* Adjust as needed */
+    border-radius: 100px; /* Adjust as needed */
+    object-fit: cover; /* This ensures the image covers the area without distorting aspect ratio */
+}
+
+.img-hover-scale {
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-hover-scale:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+.img-hover-saturate:hover {
+    filter: saturate(150%); /* Increase saturation on hover for a more vivid look */
+}
+
+.btn-github {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+.btn-github:hover, .btn-github:focus {
+    background-color: #f0ad4e; /* Darker shade for hover state */
+    color: #ffffff; /* Optional: change text color */
+    border-color: #f0ad4e; /* Optional: change border color */
+    transform: scale(1.05); /* Slightly increase button size */
+}
