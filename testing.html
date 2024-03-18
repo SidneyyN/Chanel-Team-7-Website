@@ -59,22 +59,47 @@
         <div class="container p-5">
             <h1 class="py-1">Enhanced Testing Strategy Overview</h1>
             <p class="lead">
-                In our project utilizing Microsoft PowerApps, we confront a unique set of challenges in testing due to the platform's code-less nature. 
-                Traditional testing methodologies such as code coverage, unit tests, integration tests, and performance testing are inapplicable, as PowerApps operates without conventional code. 
-                To navigate this limitation, our approach pivots towards an intensive user testing framework. 
-                This method focuses on gathering comprehensive feedback and insights directly from end-users, which are invaluable for refining and enhancing the app's functionality and user experience. 
+                In our endeavor with Microsoft PowerApps, we encounter a distinctive challenge: the platform's <span class="text-warning">lack of traditional coding structure</span> means conventional testing strategies 
+                such as code coverage, integration tests, and performance evaluations are not directly applicable. Originally, we believed this limitation would necessitate a sole reliance on 
+                extensive user testing, where gathering detailed feedback and insights from end-users stands at the forefront of our efforts to refine the app’s functionality and user experience.
+            </p>
+            <p class="lead">
+                However, upon further exploration, we discovered that <span class="text-warning">PowerApps Test Studio</span> enables us to conduct Unit Tests despite the platform's code-less environment. 
+                This revelation allows us to adopt a <span class="text-warning">dual-faceted testing strategy</span>, combining both <span class="text-warning">Unit Tests</span> and <span class="text-warning">User Acceptance Tests</span>. 
+                With Power Apps Test Studio, we can systematically validate individual components of our application, ensuring each function performs as intended in isolation. 
+                This is complemented by our user acceptance testing, where real-world application use provides critical feedback on the app's overall performance and usability.
+            </p>
+            <p class="lead">
+                By integrating Unit Tests with User Acceptance Testing, our strategy now encompasses both <span class="text-warning">technical precision</span> and <span class="text-warning">user-centric evaluation</span>. 
+                This comprehensive approach enables us to not only fine-tune the app at a granular level but also to assess its impact and effectiveness from the users' perspective, 
+                ensuring a robust and intuitive final product.
             </p>
         </div>
     </section>
-    
+    <!-- Unit Testing Methodology -->
+    <section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+        <div class="container p-5">
+            <h1 class="py-1">Unit Testing Acceptance Testing Methodology</h1>
+            <p class="lead">
+                Unit tests play a critical role in the software development lifecycle by <span class="text-warning">validating the functionality</span> of 
+                individual components or units of code in isolation from the rest of the application. This focus on testing small parts of an application 
+                ensures that each component performs as expected.
+            </p>
+            <p class="lead">
+                <span class="text-warning">Power Apps Test Studio</span> is a low-code solution to write, organize, and automate tests for canvas apps. In Test Studio, 
+                tests can be written using Power Apps expressions then played within the Test Studio to validate app functionality. Tests can also be run in a 
+                web browser and build the automated tests into the app deployment process.
+            </p>
+        </div>
+    </section>
     <!-- User Acceptance Testing Methodology -->
     <section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
         <div class="container p-5">
             <h1 class="py-1">User Acceptance Testing Methodology</h1>
             <p class="lead">
-                Our User Acceptance Testing (UAT) phase is designed to provide deep insights into the app's performance from the perspective of actual users. 
+                Our User Acceptance Testing (UAT) phase is designed to provide deep insights into the app's performance from the <span class="text-warning">perspective of actual users</span>. 
                 To accomplish this, we engaged with our esteemed client, Chanel Fashion, to conduct a thorough evaluation of the app within a real-world context. 
-                We selected four testers from Chanel Fashion boutiques, each representing different roles within the organization, to ensure a diverse range of perspectives and experiences. 
+                We selected <span class="text-warning">four testers</span> from Chanel Fashion boutiques, each representing different roles within the organization, to ensure a diverse range of perspectives and experiences. 
                 This selection criteria ensure that our testing phase benefits from a broad spectrum of user interactions, highlighting the app's versatility across various operational scenarios.
             </p>
             <h2 class="py-1">Testers</h2>
@@ -103,7 +128,7 @@
             <h2 class="py-1">Tasks</h2>
             <h3 class="py-1">Test Case 1: QR Code Interaction</h3>
             <p class="lead">
-                Objective: Assess the app's intuitiveness and ease of use.
+                <span class="text-warning">Objective:</span> Assess the app's intuitiveness and ease of use.
             </p>
             <p class="lead">
                 Procedure: Testers were provided with user accounts and tasked with scanning QR codes generated specifically for this test. 
@@ -115,7 +140,7 @@
             </p>
             <h3 class="py-1">Test Case 2: Order Modification</h3>
             <p class="lead">
-                Objective: Evaluate the ease of use and functionality for editing and saving changes to orders.
+                <span class="text-warning">Objective:</span> Evaluate the ease of use and functionality for editing and saving changes to orders.
             </p>
             <p class="lead">
                 Procedure: Testers were instructed to edit order details within the app and save these changes. 
@@ -128,7 +153,7 @@
             </p>
             <h3 class="py-1">Test Case 3: Order Status Management</h3>
             <p class="lead">
-                Objective: Test the ease of use and functionality for updating order statuses.
+                <span class="text-warning">Objective:</span> Test the ease of use and functionality for updating order statuses.
             </p>
             <p class="lead">
                 Procedure: The final task involved testers moving orders from an 'Unshipped' status to a 'Shipped' status, 
@@ -142,9 +167,9 @@
             <img src="img/Screenshot 2024-03-10 175752.png" class="img-fluid p-5 w-100 d-none d-sm-block" alt="">
             <h2 class="py-1">Conclusion</h2>
             <p class="lead">
-                By implementing a detailed and user-centric testing strategy, we aim to ensure that our application not only meets 
+                By implementing a detailed and <span class="text-warning">user-centric testing strategy</span>, we aim to ensure that our application not only meets 
                 but exceeds the operational needs and expectations of our users, particularly in a high-paced retail environment like Chanel Fashion. 
-                The feedback collected from these tests is instrumental in guiding further refinements, ensuring the app is as intuitive, efficient, 
+                The <span class="text-warning">feedback</span> collected from these tests is instrumental in <span class="text-warning">guiding further refinements</span>, ensuring the app is as intuitive, efficient, 
                 and effective as possible in supporting our clients' daily operations.
             </p>
         </div>

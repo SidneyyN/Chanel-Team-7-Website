@@ -50,3 +50,17 @@ body::before {
     border-color: #f0ad4e; /* Optional: change border color */
     transform: scale(1.05); /* Slightly increase button size */
 }
+
+h1, h2, h3 {
+    /* font-family: 'Playfair Display', serif; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.lead {
+    line-height: 1.6;
+}
+
+.section {
+    padding: 60px 0;
+}
