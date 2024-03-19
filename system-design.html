@@ -59,13 +59,26 @@
         <div class="container p-5">
             <h1 class="py-1">System Architecture</h1>
             <p class="lead">
-                This section introduces the design of the mobile application. We have two system archiecture diagrams 
-                for our situation. The first one is the 'ideal' situation, which is how it will look like when the app is 
-                deployed in boutiques. The second one is the current situation, which is how the application looks 
-                at the moment.
+                This section introduces the design of the mobile application. 
+                <br>
+                <br>
+                The first diagram represents the architecture of our app. The client interacts with our internal 
+                MS PowerApps application, which sends requests to the connected MS Sharepoint Lists. It acts as the 
+                application’s database, retrieving or updating its records, according to request received. 
+                Subsequently, the application processes the response and displays the relevant information back to the client, 
+                ensuring a seamless flow of information and interaction within the application.
             </p>
-            <img src="img/Sys Arch Ideal.png" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
+            <img src="img/Sys Arch Real.jpg" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
+
             <p class="lead">
+                The second diagram illustrates our envisioned ideal architecture for the application, representing future 
+                objectives and improvements. Currently, it is not possible due to our lack of access to Chanel's Y2 
+                Point-of-Sales system. However, with additional time and access to Chanel's resources may allow for 
+                further enhancements and progress of the app towards our ideal system architecture diagram.
+            </p>
+            <img src="img/Sys Arch Ideal.jpg" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
+
+            <!-- <p class="lead">
                 Y2-Point-Of-Sale-System (POS System) keeps track of products yet to be sold. However once an <span class="text-warning">item </span>has been <span class="text-warning">purchased</span>,
                 the product exits this system and therefore <span class="text-warning">cannot be tracked anymore</span>. When the app is deployed and used 
                 alongside the POS System, products that exits the system can be added to the SQL Database.
@@ -79,11 +92,11 @@
                 <span class="text-warning">edit orders and update the status</span>. It is then linked to the Address Lookup API, which can store 
                 the address of customers using their post codes. 
             </p>
-            <img src="img/Sys Arch Real.png" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
+            <img src="img/Sys Arch Real.jpg" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
             <p class="lead">
                 At the current moment, <span class="text-warning">Microsoft Sharepoint List</span> is functionally acting as our SQL database, as it 
                 stores order details and items in each drawers. It has the same role as a database. 
-            </p>
+            </p> -->
         </div>
     </section>
     
@@ -92,7 +105,9 @@
         <div class="container p-5">
             <h1 class="py-1">Data Storage and Entity Relations</h1>
             <p class="lead">
-                
+                MS Sharepoint lists imitates a SQL database for our application. Tables are represented with seperate lists. Like a 
+                SQL database, lists store records with one or more attributes. To represent relations, SharePoint lists have 'lookup columns'
+                to track and maintain information across multiple lists.
             </p>
             <img src="img/NEW Post-Sales App ERD.png" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
         </div>
