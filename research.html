@@ -59,22 +59,65 @@
         <div class="container p-5">
             <h1 class="py-1">Overview</h1>
             <p class="lead">
-                As part of the research we did for our app, we looked into <span class="text-warning">existing solutions</span> that solve a similar problem to the one we are looking to fix. 
-                During our research we noted that it was hard to find details about bespoke systems catered to a single company’s needs, 
-                especially not one as exclusive as Chanel. 
-                Therefore, we broke down the problem and looked into distinct examples in order to form a bigger picture. 
-                We found some examples and analysed their features to see what we could take inspiration from and what didn’t fit the customised solution we are building. 
+                Our primary objective is to develop a PowerApps application tailored for Chanel, with PowerApps serving as the foundational development platform. 
+                Yet, a critical decision remains in selecting an appropriate database solution to support our application's needs. After careful consideration, 
+                we have identified <span class="text-warning">SharePoint Lists</span> and <span class="text-warning">Microsoft SQL</span> as our top candidates. The selection process necessitates a thorough comparison across various dimensions, 
+                including functionality, efficiency, and ease of integration.
             </p>
             <p class="lead">
-                Below are our research into a few other Powerapps solutions.
+                This article is dedicated to exploring the <span class="text-warning">advantages</span> and <span class="text-warning">disadvantages</span> of both SharePoint Lists and Microsoft SQL. Our goal is to provide a comprehensive analysis that demonstrates why 
+                SharePoint Lists emerge as the most fitting and refined choice for our project's requirements.
+            </p>
+            <p class="lead">
+                Beyond choosing a database solution, we looked into <span class="text-warning">existing solutions</span> that solve a similar problem to the one we are looking to fix. During our research we noted that it was hard to find details about 
+                bespoke systems catered to a single company’s needs, especially not one as exclusive as Chanel. Therefore, we broke down the problem and looked into distinct examples in order to form a bigger picture. 
+                We found some examples and analysed their features to see what we could take inspiration from and what didn’t fit the customised solution we are building.
+            </p>
+            <p class="lead">
+                The following sections will delve into our findings from researching various PowerApps solutions, aiming to draw valuable insights to inform the development of a solution that not only meets but exceeds Chanel's specific needs.
             </p>
         </div>
     </section>
-    
+
+    <!-- Database Solution -->
+    <section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+        <div class="container p-5">
+            <h1 class="py-1">Database Solution</h1>
+            <p class="lead">
+                Selecting a dependable database solution is paramount for the success of our project. We seek a system that not only demonstrates resilience and flexibility but also ensures <span class="text-warning">user-friendliness</span> and superior performance. 
+                To this end, we delve into a comparative analysis of SharePoint Lists and Microsoft SQL in this section. Our aim is to meticulously evaluate the strengths and limitations of each option against our project's requirements. 
+                Through this analysis, we endeavor to illustrate why SharePoint Lists emerges as the more suitable choice, aligning perfectly with our project's goals by offering a harmonious blend of <span class="text-warning">functionality</span>, <span class="text-warning">efficiency</span>, and <span class="text-warning">ease of integration</span>.
+            </p>
+            <h2 class="py-1">Background</h2>
+            <p class="lead">
+                To set the stage for our discussion, let's explore the candidate toolchains under consideration, beginning with SharePoint Lists. Introduced into Microsoft SharePoint in 2016, SharePoint Lists provide a highly <span class="text-warning">user-friendly interface</span> that mirrors the functionality of Excel spreadsheets, 
+                enabling effortless management, updating, and display of data. (BeyondIntranet, 2024) One of SharePoint Lists' notable advantages is its array of ready-to-use <span class="text-warning">templates</span>, which serve as an excellent foundation for organizing list items. (Microsoft Support, 2019) 
+                Furthermore, the online nature of SharePoint Lists, which ensures a single version of data exists, eliminates version control issues. (ContentFormula, 2023) This aspect is particularly beneficial, as it streamlines operations and enhances efficiency.
+                Conversely, Microsoft SQL is an advanced database solution that leverages Structured Query Language (SQL) as its foundation. Microsoft SQL is described as a feature-rich platform, offering <span class="text-warning">extensive capabilities</span> including granular access control permissions and built-in server roles. (TechTarget, 2024) 
+                These features are essential for enforcing the principle of least privilege, ensuring data security. Additionally, Microsoft SQL integrates with Azure Synapse Link for SQL to provide <span class="text-warning">near-real-time analytics</span> on operational data and employs horizontal fusion query execution plan optimization, 
+                significantly reducing the number of queries needed to fetch results. The platform's advanced and secure nature, coupled with its comprehensive feature set, makes it an ideal choice for robust business solutions.
+            </p>
+            <p class="lead">
+                In summary, SharePoint Lists and Microsoft SQL each bring distinct strengths to the table. SharePoint Lists excel in user-friendliness and simplicity, making them ideal for projects requiring quick setup and straightforward data management. On the other hand, 
+                Microsoft SQL offers a deep well of advanced features and security measures, suited for complex business environments where data analytics and security are paramount.
+            </p>
+            <h2 class="py-1">Comparison</h2>
+            <p class="lead">
+                When evaluating the functionality aspect of our database options, Microsoft SQL distinctly outperforms SharePoint Lists in terms of the breadth and depth of features offered. Its advanced capabilities and heightened security measures are unparalleled, catering to complex database needs with finesse. 
+                However, the sophistication of Microsoft SQL, while impressive, <span class="text-warning">surpasses the requirements</span> of our project's relatively straightforward database structure. The extensive functionalities, although beneficial for intricate databases, <span class="text-warning">remain largely untapped</span> within the scope of our needs.
+                On the other hand, SharePoint Lists emerges as the more <span class="text-warning">practical</span> choice for our project, particularly when considering efficiency and ease of integration with PowerApps. Its simplicity and user-friendly nature, drawing parallels with Excel's interface, 
+                significantly reduce the learning curve and expedite the development process. SharePoint Lists may not be the go-to for complex relational databases; however, their suitability for simpler database structures, combined with the absence of additional costs and seamless connectivity with PowerApps, 
+                underscores their advantage in our context. This ease of integration facilitates a smoother, more efficient workflow, enabling rapid deployment and modifications. Moreover, the availability of <span class="text-warning">extensive documentation</span> further enhances SharePoint Lists' appeal, 
+                providing valuable resources for troubleshooting and optimization. Given our project's database complexity level, the advantages of SharePoint Lists—cost-effectiveness, ease of use, and straightforward integration with PowerApps—clearly outweigh the need for the more advanced functionalities of Microsoft SQL. 
+                By opting for SharePoint Lists, we leverage a tool that not only meets our current requirements but does so in an efficient and user-friendly manner, ensuring swift progress and a focus on developing a robust application within the PowerApps ecosystem.
+            </p>
+        </div>
+    </section>
+
     <!-- SafetyCulture -->
     <section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
         <div class="container p-5">
-            <h1>SafetyCulture: Workplace Operations Platform</h1>
+            <h1 class="py-1">SafetyCulture: Workplace Operations Platform</h1>
             <img src="img/Screenshot 2024-01-30 at 10.05.23 AM.png" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
             <h2 class="py-1">Features</h2>
             <p class="lead">
@@ -146,6 +189,22 @@
         </div>
         <div class="container p-5">
             <h1>References</h1>
+            <p class="lead">
+                Beyond Intranet, "What is Sharepoint Lists? A Complete Guide", (2024). Available at:
+                <a href="https://www.beyondintranet.com/blog/what-is-a-sharepoint-list/">https://www.beyondintranet.com/blog/what-is-a-sharepoint-list/</a>
+            </p>
+            <p class="lead">
+                Microsoft Support, "Introduction to Lists", (2019). Available at:
+                <a href="https://support.microsoft.com/en-gb/office/introduction-to-lists-0a1c3ace-def0-44af-b225-cfa8d92c52d7">https://support.microsoft.com/en-gb/office/introduction-to-lists-0a1c3ace-def0-44af-b225-cfa8d92c52d7</a>
+            </p>
+            <p class="lead">
+                Content Formula, "Power Apps Data Sources – The Ultimate Guide", (2023). Available at: 
+                <a href="https://www.contentformula.com/sharepoint-lists-5-reasons-why-they-are-better-than-spreadsheets/">https://www.contentformula.com/sharepoint-lists-5-reasons-why-they-are-better-than-spreadsheets/</a>
+            </p>
+            <p class="lead">
+                Tech Target, "Microsoft SQL Server", (2024). Available at: 
+                <a href="https://www.techtarget.com/searchdatamanagement/definition/SQL-Server">https://www.techtarget.com/searchdatamanagement/definition/SQL-Server</a>
+            </p>
             <p class="lead">
                 Safety Culture, "Workplace Operations Platform", (2024). Available at: 
                 <a href="https://safetyculture.com/platform/">https://safetyculture.com/platform/</a>
