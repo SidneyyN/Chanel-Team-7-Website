@@ -63,3 +63,23 @@ h1, h2, h3 {
 .section {
     padding: 60px 0;
 }
+
+/* Custom CSS for the image */
+.img-fluid-custom {
+    max-width: 100%; /* Ensures image is never more than 100% of its container */
+    height: auto; /* Keeps the aspect ratio */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .img-fluid-custom {
+        width: 40%; /* Example: reduces width to 50% on medium screens */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .img-fluid-custom {
+        width: 70%; /* Retains a larger size on large screens */
+    }
+}
