@@ -65,21 +65,32 @@ h1, h2, h3 {
 }
 
 /* Custom CSS for the image */
-.img-fluid-custom {
+.img-fluid-portrait {
     max-width: 100%; /* Ensures image is never more than 100% of its container */
     height: auto; /* Keeps the aspect ratio */
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .img-fluid-custom {
+    .img-fluid-portrait {
         width: 40%; /* Example: reduces width to 50% on medium screens */
+    }
+    .img-fluid-landscape {
+        width: 60%; /* Example: reduces width to 50% on medium screens */
     }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    .img-fluid-custom {
+    .img-fluid-portrait {
         width: 70%; /* Retains a larger size on large screens */
     }
+    .img-fluid-landscape {
+        width: 80%; /* Retains a larger size on large screens */
+    }
+}
+
+.img-fluid-custom-landscape {
+    max-width: 100%; /* Ensures image is never more than 100% of its container */
+    height: auto; /* Keeps the aspect ratio */
 }

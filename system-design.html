@@ -60,25 +60,26 @@
             <h1 class="py-1">System Architecture</h1>
             <p class="lead">
                 This section introduces the design of the mobile application. 
-                <br>
-                <br>
-                The first diagram represents the architecture of our app. The client interacts with our internal 
-                MS PowerApps application, which sends requests to the connected MS Sharepoint Lists. It acts as the 
-                application’s database, retrieving or updating its records, according to request received. 
-                Subsequently, the application processes the response and displays the relevant information back to the client, 
-                ensuring a seamless flow of information and interaction within the application.
             </p>
-            <img src="img/Sys Arch Real.jpg" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
-
+            <img src="img/Sys Arch Real.jpg" class="img-fluid-landscape img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
+            <p class="lead">
+                The first diagram represents the architecture of our app. The client interacts with our internal 
+                MS PowerApps application, which sends requests to the connected <span class="text-warning">MS Sharepoint Lists</span>. It acts as the 
+                application’s <span class="text-warning">database</span>, retrieving or updating its records, according to request received. 
+                Subsequently, the application <span class="text-warning">processes the response</span> and displays the relevant information back to the client, 
+                ensuring a seamless flow of information and interaction within the application.
+            </p> 
+            <img src="img/Sys Arch Ideal.jpg" class="img-fluid-landscape img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
             <p class="lead">
                 Here is a second diagram which illustrates our envisioned ideal architecture for the application. The additional 
                 connections would improve scalability, efficiency and convenience of the application. It includes a connection 
-                to a proper database for scalability, and a connection to Chanel’s Y2 Point-of-Sale system. This would allow data 
-                about sold items that need to be shipped to transfer automatically to the PowerApp, making it more convenient and 
-                efficient. Additional time and permissions to access Chanel's resources would allow for further enhancements and 
-                progress of the app towards our ideal system architecture diagram.
+                to a <span class="text-warning">proper database</span> for scalability, and a connection to Chanel’s <span class="text-warning">Y2 Point-of-Sale system</span>. 
+                The Y2 Point-of-Sale system catalogues all boutique products, retaining them within its database until the moment they are sold, at which point they are removed from the system.
+                This would allow data about sold items that need to be shipped to <span class="text-warning">transfer automatically</span> to the PowerApp, making it more convenient and 
+                efficient. The <span class="text-warning">Address Lookup API</span> would allow Fashion Advisors to store the delivery address of clients by typing in their postcodes.
+                Additional time and permissions to access Chanel's resources would allow for further enhancements and progress of the app towards our ideal system architecture diagram.
             </p>
-            <img src="img/Sys Arch Ideal.jpg" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
+           
 
             <!-- <p class="lead">
                 Y2-Point-Of-Sale-System (POS System) keeps track of products yet to be sold. However once an <span class="text-warning">item </span>has been <span class="text-warning">purchased</span>,
