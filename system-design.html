@@ -118,6 +118,42 @@
                 to track and maintain information across multiple lists.
             </p>
             <img src="img/FINAL Post-Sales App ERD.png" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block" alt="">
+            <p class="lead">
+                Our app’s focus is digitalising data that has until now exclusively existed on paper whilst ensuring accuracy and accessibility of said data. 
+                Our starting point for the database plan and Entity Relationship Diagram was talking with the end users and looking at copies of the forms they currently use that we aim to digitalise. 
+                We then took the various categories of information they document as part of the post-sales management process and expanded on it to build a system that efficiently tracks this related data. 
+            </p>
+            <p class="lead">
+                Our ERD is a combination of tables that don’t yet exist in Chanel’s current architecture, which form our solution to the problem, and tables that act as placeholders for a future connection to existing databases within Chanel that we can’t have access to during development due to the data’s sensitive nature i.e. customer details. 
+            </p>
+            <p class="lead">
+                ClientDetails and AdvisorDetails are two similar tables that represent existing databases within Chanel. The primary key for both tables is a unique identifying number that will distinguish records within each table from one another regardless of if they share the same name. 
+                These fields both act as foreign keys within the central OrderDetails table, assigning each order a corresponding fashion advisor (this could be the one who made the sale, or any advisor responsible for the shipment) and a client who placed the order. 
+                Both have a one-to-many (or zero) relationship with OrderDetails, as an advisor could be involved in any amount of orders at any given time, and a client can have zero, one or multiple shipments ongoing at once.  
+            </p>
+            <p class="lead">
+                After handover to Chanel, ClientDetails would be replaced with Chanel’s existing CRM’s database, where up-to-date client data could be sent directly to the app. Our version of the CRM’s database contains only details relevant to shipping purchased orders, such as the client’s home address, which can be used to fill in a default shipping address on orders and save staff time. 
+            </p>
+            <p class="lead">
+                AdvisorDetails would be replaced by Chanel’s Microsoft Organisation account database so that advisors can login to the app with the same credentials they already use across the Microsoft suite. For now, we will populate this table with dummy account credentials in order to implement the login page and potentially, some access control features. 
+            </p>
+            <p class="lead">
+                The central table of the database is OrderDetails. This is how we will provide crucial visibility that currently doesn’t exist to post-sales shipments that have left all other Chanel systems after purchase. The ‘Status’ field will consist of 5 options that we have agreed with the client best represent the different stages a shipment goes through post-sales: 
+                Shipment Incomplete, Ready to Pack, Ready to Ship, Shipped & Received by Client. ‘Remarks’ is a text field that allows advisors to add any extra comments relating to the order, as attention-to-detail and a highly personalised client experience is a priority throughout Chanel boutiques. There are 4 fields for providing comprehensive information about the shipping address and method. 
+                ‘Courier’ is another choice field with the options being the main couriers Chanel primarily uses: DHL, DPD, Addison Lee, Toshi and an Other field for edge cases. 
+            </p>
+            <p class="lead">
+                Whilst establishing requirements, we learnt that an important part of the shipment process is using the invoice to verify that the correct quantity and size of items are present in the order at every step of exporting. Although we initially considered including a link to Chanel’s POS in our database so that advisors could add specific fashion items to each order within the app, 
+                the end users let us know that this would only be more time-consuming for them and that they would prefer to track the contents of an order using the invoice exclusively.  Therefore, we included an Attachments field to digitalise these invoices and make them more accessible. The file format will be strictly limited to .pdf in order to ensure that saved attachments are compatible with the pdf viewer available in PowerApps Studio. 
+            </p>
+            <p class="lead">
+                Our clients also expressed that being able to audit changes to order details is important to them. the lastEditedBy field will store the name of the advisor who most recently edited the order, aiding communication between advisors if clarifications need to be made outside of using the app.
+            </p>
+            <p class="lead">
+                DrawerList and DrawerAllocation provide visibility to the physical drawers located in the boutique used to store orders as they go through the different stages. DrawerList tracks all existing drawers and their unique identifiers. DrawerAllocation links DrawerList and OrderDetails together with their two primary keys forming a composite primary key. 
+                The purpose of this table is to maximise flexibility with regards to how orders are distributed between drawers. One drawer can hold multiple orders, or one order can be spread across multiple drawers. This ensures that regardless of how the app evolves during implementation and deployment, the database can adapt without needing restructuring. 
+                Both composite primary keys in DrawerAllocation have a many-to-one relationship with their respective tables of origin, however there is a small distinction. Whilst a drawer can exist in DrawerList but be empty and therefore not present in DrawerAllocation, an existing order must always be in a drawer and therefore be present in DrawerAllocation.
+            </p>
         </div>
         
     </section>
