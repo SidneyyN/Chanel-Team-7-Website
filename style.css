@@ -83,7 +83,7 @@ h1, h2, h3 {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .img-fluid-portrait {
-        width: 70%; /* Retains a larger size on large screens */
+        width: 50%; /* Retains a larger size on large screens */
     }
     .img-fluid-landscape {
         width: 80%; /* Retains a larger size on large screens */
