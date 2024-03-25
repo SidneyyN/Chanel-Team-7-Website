@@ -187,6 +187,7 @@
                 simultaneously display only the orders in the scanned drawer, and display information about each individual order. It does this by filtering the corresponding order records from OrderDetails using the ThisItem keyword. 
             </p>
             <img src="img/13.png" class="img-fluid-landscape img-hover-scale p-5 d-none d-sm-block" alt="">
+            <img src="img/14.png" class="img-fluid-landscape img-hover-scale p-5 d-none d-sm-block" alt="">
         </div>
         <div class="container p-5"></div>
     </section>
@@ -194,13 +195,103 @@
     <section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
         <div class="container p-5">
             <h1 class="py-1">UI</h1>
-            
+            <p class="lead">
+                Maintaining an aesthetic theme in line with Chanel’s standards was a high priority throughout development. Due to there being a very limited number of font choices in PowerApps Studio, 
+                we used svg image files to add a custom font, the signature Chanel ‘Couture’ font. However, it was very hard to use compared to the default label control and caused problems on mobile 
+                with parts of the text being cropped out. Furthermore, these image controls aren’t compatible with the functions used to query the database, so we could only use them for fixed text such as the headers on each page. 
+            </p>
+            <p class="lead">
+                Many pages in the app contain a large amount of very similar-looking controls. This required that we implement a simple naming convention throughout to ensure that when we refer to individual controls in our code, 
+                we never refer to a similar one on the incorrect page. This makes the code more readable and optimises debugging. 
+            </p>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md">
+                    <img src="img/15.png" class="img-fluid-portrait img-hover-scale p-5 d-none d-sm-block" alt="">
+                </div>
+                <div class="col-md">
+                    <img src="img/16.png" class="img-fluid-portrait img-hover-scale p-5 d-none d-sm-block" alt="">
+                </div>
+            </div>
+            <p class="lead">
+                In order to maintain a good user-experience and easy scalability of the app, we used a combination of containers and galleries across different pages as a means to display data neatly. 
+                Both allow for scrolling, but are suited to different purposes.
+            </p>
+            <p class="lead">
+                Containers are used to vertically or horizontally stack controls so that they remain at a uniform distance, in the correct order, and don’t overlap. We used these primarily across the View Order, Edit Order & Add Order pages, 
+                as well as at the very top of the Home page to build the horizontal scrolling for status selection. In containers such as the one below, the white background expands with the container itself, making it easy to remove or add fields and adjust the UI accordingly. 
+            </p>
+            <!-- <div class="text-center">
+                <img src="img/17.png" class="img-fluid-portrait img-hover-scale p-5 d-none d-sm-block" alt="">
+            </div> -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-auto">
+                    <img src="img/17.png" class="img-fluid img-hover-scale p-5 d-none d-sm-block mx-auto" alt="">
+                </div>
+            </div>
+            <p class="lead">
+                We aimed to keep the UI of the app intuitive and avoid overcrowding of text and buttons. Users access two key functionalities, adding orders and scanning barcodes, via these two simple icons located in the bottom right of the Home page, where they are easy to reach. 
+            </p>
+            <!-- <div class="text-center">
+                <img src="img/18.png" class="img-fluid-portrait img-hover-scale p-5 d-none d-sm-block" alt="">
+            </div> -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-auto">
+                    <img src="img/18.png" class="img-fluid img-hover-scale p-5 d-none d-sm-block mx-auto" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Other Functionalities -->
+    <section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+        <div class="container p-5">
+            <h1 class="py-1">Other Functionalities</h1>
+            <h2 class="py-1">PDF Viewing</h2>
+            <p class="lead">
+                PowerApps Studio currently contains an experimental PDF viewer control, but due to its limitations in terms of the encoding scheme the PDF is in, we had to include a Power Automate Flow for user’s to be able to view invoices within the app. 
+                ‘PDFReturner’ converts the PDFs stored in the Attachments column of OrderDetails from base64 to data URI encoding.  Firstly, the flow is triggered within the app in the OnSelect behaviour of the invoiceButton on the View Order page. 
+                The flow will return an error if there is no attachment present, so this button only appears when there exists a PDF to view. 
+            </p>
+            <p class="lead">
+                The flow takes the record Id, which is built-in to Sharepoint and is distinct from the OrderNo, as an argument. It then returns the entirety of the Attachments column, which is of the data type ‘Table’, and then extracts the individual contents (just one attachment in this case). 
+            </p>
+            <img src="img/19.png" class="img-fluid img-hover-scale p-5 d-none d-sm-block mx-auto" alt="">
+            <p class="lead">
+                The encoding scheme conversion function can only take the base64 value itself, but the ‘Get Attachment Content’ block returns a nested JSON file containing extra information. 
+                We therefore have to use two ‘Parse JSON’ blocks to extract just the $content attribute. This is then passed to a ‘Compose’ block which executes dataUri(base64ToBinary(outputs('Parse_JSON_2'))). 
+                To prevent the result being converted back into JSON when it’s returned to PowerApps, it is stored in a variable and then sent back to the app in the correct format.
+            </p>
+            <img src="img/20.png" class="img-fluid img-hover-scale p-5 d-none d-sm-block mx-auto" alt="">
+            <p class="lead">This code shows how the flow is triggered, what argument it receives, and how it the result is stored in the variable orderInvoice, which is passed to the Document property of pdfViewer. </p>
+            <img src="img/21.png" class="img-fluid img-hover-scale p-5 w-100 d-none d-sm-block mx-auto" alt="">
+            <h2 class="py-1">Input Validation</h2>
+            <p class="lead">
+                In order to prevent features from breaking and ensure the rules and relations enforced in our database aren’t violated, the app performs input validation before submitting any user changes to the database. 
+                If any of these three criteria are violated, a pop-up will appear. These are:
+            </p>
+            <ul>
+                <li><p class="lead">Any of the required fields being blank. </p></li>
+                <li><p class="lead">More than one attachment being uploaded.</p></li>
+                <li><p class="lead">Files that are not in the .pdf format being uploaded.</p></li>
+            </ul>
+            <p class="lead">This is done using multiple if statements and flags at the beginning of the OnSelect behaviour, which must all be false in order for the UpdateIf and Patch functions to run. This is the code that performs input validation on attachments.</p>
+            <img src="img/22.png" class="img-fluid-landscape img-hover-scale p-5 d-none d-sm-block mx-auto" alt="">
+            <p class="lead">
+                If any of the flags indicating invalid input are true, a local variable (known as context variables in PowerApps) will change to true to toggle the visibility of the corresponding pop-up message. 
+            </p>
+            <img src="img/23.png" class="img-fluid-landscape img-hover-scale p-5 d-none d-sm-block mx-auto" alt="">
+            <h2 class="py-1">Sorting</h2>
+            <p class="lead">
+                On top of filtering and searching on the Home page, users can also sort orders by different criteria by clicking the icon to the right of the search bar. Clicking the different options in the sort menu updates the values of two local variables, sortBy and sortAscending, accordingly. 
+                The sorting itself is achieved with the sortByColumns function. The first argument is the filtered table that results from the selected status and search bar input. The second and third argument, sortBy and sortAscending, provide the column by which the filtered orders should be sorted 
+                and which direction they should be sorted in. This takes place in the Items property of orderGallery. 
+            </p>
+            <img src="img/24.png" class="img-fluid-landscape img-hover-scale p-5 d-none d-sm-block mx-auto" alt="">
         </div>
     </section>
     <!-- Barcode Generation -->
     <section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
         <div class="container p-5">
-            <h1 class="py-1">Barcode Generation and Scanning</h1>
+            <h1 class="py-1">Barcode Generation</h1>
             <p class="lead">
                 Below contains instructions for how to <span class="text-warning">create new barcodes</span> to be used on the export drawers in the heart-of-house.
             </p>
